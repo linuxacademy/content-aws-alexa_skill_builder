@@ -21,10 +21,8 @@ This readme assumes you have your developer environment ready to go and that you
 ```
 ask new --url https://github.com/linuxacademy/content-alexa-skillbuilder.git
 ? Please type in your new skill name, alphanumeric only: example-skill
-[Warn]: Downloading skill template from unofficial resource. Please make
-sure you understand what each script is doing to best protect yourself
-from malicious usage
-? Would you still like to continue execution ? Yes
+[Warn]: Downloading skill template from unofficial resource. Please make sure you understand what each script is doing to best protect yourself from malicious usage? 
+Would you still like to continue execution ? Yes
 Skill The Linux Academy Lab Skill has been created based on the chosen template
 In this example, ASK CLI prompts for a skill name. You can provide a skill name with the --skill-name or -n parameter.
 ```
