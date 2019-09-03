@@ -1,5 +1,6 @@
 {
   "interactionModel": {
+<<<<<<< HEAD
       "languageModel": {
           "invocationName": "slots lab",
           "intents": [
@@ -115,3 +116,30 @@
       ]
   }
 }
+=======
+    "languageModel": {
+      "invocationName": "linux academy lab",
+      "intents": [
+        {
+          "name": "AMAZON.CancelIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.HelpIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.StopIntent",
+          "samples": []
+        },
+        {
+          "name": "HelloWorldIntent",
+          "samples": [
+            "hello"
+          ]
+        }
+      ]
+    }
+  }
+}
+>>>>>>> master

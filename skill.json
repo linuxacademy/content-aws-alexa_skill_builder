@@ -5,11 +5,19 @@
         "en-US": {
           "summary": "Sample Short Description",
           "examplePhrases": [
+<<<<<<< HEAD
             "Alexa open Intents Lab",
             "linux academy",
             "help"
           ],
           "name": "Slots Lab",
+=======
+            "Alexa open linux academy lab",
+            "linux academy",
+            "help"
+          ],
+          "name": "lalabskillbuilder",
+>>>>>>> master
           "description": "Sample Full Description"
         }
       },
