@@ -3,34 +3,18 @@
     "publishingInformation": {
       "locales": {
         "en-US": {
-          "summary": "Sample Short Description",
+          "summary": "Deploy a skill",
           "examplePhrases": [
-<<<<<<< HEAD
-            "Alexa open Intents Lab",
-            "linux academy",
-            "help"
+            "Alexa open deploy skill test",
           ],
-          "name": "Slots Lab",
-=======
-            "Alexa open linux academy lab",
-            "linux academy",
-            "help"
-          ],
-          "name": "lalabskillbuilder",
->>>>>>> master
-          "description": "Sample Full Description"
+          "name": "deploy skills",
+          "description": "Shows I can deploy a skill"
         }
-      },
-      "isAvailableWorldwide": true,
-      "testingInstructions": "Sample Testing Instructions.",
-      "category": "KNOWLEDGE_AND_TRIVIA",
-      "distributionCountries": []
-    },
     "apis": {
       "custom": {
         "endpoint": {
           "sourceDir": "lambda/custom",
-          "uri": "lalabskillbuilder"
+          "uri": "deploy_skills_intro"
         }
       }
     },
