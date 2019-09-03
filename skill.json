@@ -5,16 +5,16 @@
         "en-US": {
           "summary": "Deploy a skill",
           "examplePhrases": [
-            "Alexa open deploy skill test",
+            "Alexa open deploy skill intro",
           ],
-          "name": "deploy skills",
+          "name": "deploy test",
           "description": "Shows I can deploy a skill"
         }
     "apis": {
       "custom": {
         "endpoint": {
           "sourceDir": "lambda/custom",
-          "uri": "deploy_skills_intro"
+          "uri": "deploy_skill_intro"
         }
       }
     },
