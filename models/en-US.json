@@ -1,7 +1,7 @@
 {
   "interactionModel": {
     "languageModel": {
-      "invocationName": "deploy test",
+      "invocationName": "interview test",
       "intents": [
         {
           "name": "AMAZON.CancelIntent",

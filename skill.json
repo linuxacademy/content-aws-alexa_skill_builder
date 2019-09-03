@@ -7,7 +7,7 @@
           "examplePhrases": [
             "Alexa open deploy skill intro",
           ],
-          "name": "deploy test",
+          "name": "interview test",
           "description": "Shows I can deploy a skill"
         }
     "apis": {
