@@ -13,12 +13,12 @@ const LaunchRequestHandler = {
     return handlerInput.requestEnvelope.request.type === 'LaunchRequest';
   },
   handle(handlerInput) {
-    const speechText = 'Welcome to the Linux Academy Skill Builder Lab, you can say hello!';
+    const speechText = 'Welcome to the Linux Academy Alexa Lab! This is a simple demonstration. You can say I\'ll be back.';
 
     return handlerInput.responseBuilder
       .speak(speechText)
       .reprompt(speechText)
-      .withSimpleCard('Hello World', speechText)
+      .withSimpleCard('Linux Academy Alexa Lab', speechText)
       .getResponse();
   },
 };
@@ -26,17 +26,17 @@ const LaunchRequestHandler = {
 // # `HelloWorldIntent` 
 // Hello World Intent Handler Handles all IntentRequest and says Hello world when invoked 
 
-const HelloWorldIntentHandler = {
+const GoodbyeIntentHandler = {
   canHandle(handlerInput) {
     return handlerInput.requestEnvelope.request.type === 'IntentRequest'
-      && handlerInput.requestEnvelope.request.intent.name === 'HelloWorldIntent';
+      && handlerInput.requestEnvelope.request.intent.name === 'GoodbyeIntent';
   },
   handle(handlerInput) {
-    const speechText = 'Hello World!';
+    const speechText = 'I look forward to seeing you later!';
 
     return handlerInput.responseBuilder
       .speak(speechText)
-      .withSimpleCard('Hello World', speechText)
+      .withSimpleCard('Hurry Back!', speechText)
       .getResponse();
   },
 };
@@ -48,12 +48,12 @@ const HelpIntentHandler = {
       && handlerInput.requestEnvelope.request.intent.name === 'AMAZON.HelpIntent';
   },
   handle(handlerInput) {
-    const speechText = 'You can say hello to me!';
+    const speechText = 'You can say thank you to me!';
 
     return handlerInput.responseBuilder
       .speak(speechText)
       .reprompt(speechText)
-      .withSimpleCard('Hello World', speechText)
+      .withSimpleCard('Hurry Back!', 'I look forward to seeing you later!')
       .getResponse();
   },
 };
@@ -65,11 +65,11 @@ const CancelAndStopIntentHandler = {
         || handlerInput.requestEnvelope.request.intent.name === 'AMAZON.StopIntent');
   },
   handle(handlerInput) {
-    const speechText = 'Goodbye!';
+    const speechText = 'Comeback soon!';
 
     return handlerInput.responseBuilder
       .speak(speechText)
-      .withSimpleCard('Hello World', speechText)
+      .withSimpleCard('Goodbye!', speechText)
       .getResponse();
   },
 };
@@ -123,11 +123,11 @@ const skillBuilder = Alexa.SkillBuilders.custom();
 exports.handler = skillBuilder
   .addRequestHandlers(
     LaunchRequestHandler,
-    HelloWorldIntentHandler,
     HelpIntentHandler,
     CancelAndStopIntentHandler,
     SessionEndedRequestHandler,
-    IntentReflectorHandler
+    IntentReflectorHandler,
+    GoodbyeIntentHandler
   )
   .addErrorHandlers(ErrorHandler)
   .lambda();

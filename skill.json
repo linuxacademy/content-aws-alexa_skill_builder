@@ -3,14 +3,14 @@
     "publishingInformation": {
       "locales": {
         "en-US": {
-          "summary": "Sample Short Description",
+          "summary": "A set of branches to demonstrate Alexa skills for the Alexa SKills Cert Exam Course",
           "examplePhrases": [
-            "Alexa open linux academy lab",
+            "Alexa open linux academy alexa lab",
             "linux academy",
-            "help"
+            "alexa lab"
           ],
-          "name": "lalabskillbuilder",
-          "description": "Sample Full Description"
+          "name": "linuxAcadamyAlexaLab",
+          "description": "A set of branches for the Alexa Skills Cert Exam Course."
         }
       },
       "isAvailableWorldwide": true,
@@ -22,7 +22,7 @@
       "custom": {
         "endpoint": {
           "sourceDir": "lambda/custom",
-          "uri": "lalabskillbuilder"
+          "uri": "linuxAcademyAlexaLab"
         }
       }
     },
