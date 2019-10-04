@@ -4,7 +4,11 @@
       "invocationName": "linux academy lab",
       "intents": [
         {
-          "name": "AMAZON.CancelAndStopIntent",
+          "name": "AMAZON.CancelIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.StopIntent",
           "samples": []
         },
         {
@@ -12,7 +16,7 @@
           "samples": []
         },
         {
-          "name": "Amazon.FallBackIntent",
+          "name": "AMAZON.FallbackIntent",
           "samples": []
         },
         {

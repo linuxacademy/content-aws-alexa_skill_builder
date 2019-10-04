@@ -5,9 +5,9 @@
         "en-US": {
           "summary": "A set of branches to demonstrate Alexa skills for the Alexa SKills Cert Exam Course",
           "examplePhrases": [
-            "Alexa open linux academy alexa lab",
+            "Alexa open linux academy lab",
             "linux academy",
-            "alexa lab"
+            "la lab"
           ],
           "name": "linuxAcadamyAlexaLab",
           "description": "A set of branches for the Alexa Skills Cert Exam Course."

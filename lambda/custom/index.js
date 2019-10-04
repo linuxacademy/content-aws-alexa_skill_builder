@@ -13,7 +13,7 @@ const LaunchRequestHandler = {
     return handlerInput.requestEnvelope.request.type === 'LaunchRequest';
   },
   handle(handlerInput) {
-    const speechText = 'Welcome to the Linux Academy Alexa Lab! This is a simple demonstration. You can say I\'ll be back.';
+    const speechText = 'Welcome to the Linux Academy Lab! This is a simple demonstration. You can say Ill be back.';
 
     return handlerInput.responseBuilder
       .speak(speechText)
