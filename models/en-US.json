@@ -22,7 +22,8 @@
         {
           "name": "WelcomeIntent",
           "samples": [
-            "i'm glad to be here"
+            "i'm glad to be here",
+            "i am glad to be here"
           ]
         }
       ]

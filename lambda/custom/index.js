@@ -13,7 +13,7 @@ const LaunchRequestHandler = {
     return handlerInput.requestEnvelope.request.type === 'LaunchRequest';
   },
   handle(handlerInput) {
-    const speechText = "Welcome to the Linux Academy Alexa Lab, you can say 'I\'m glad to here.'";
+    const speechText = "Welcome to the Linux Academy Alexa Lab, you can say 'I\'m glad to be here.'";
 
     return handlerInput.responseBuilder
       .speak(speechText)
@@ -108,7 +108,6 @@ exports.handler = skillBuilder
   .addRequestHandlers(
     LaunchRequestHandler,
     HelpIntentHandler,
-    // CancelAndStopIntentHandler,
     SessionEndedRequestHandler,
     // IntentReflectorHandler,
     WelcomeIntentHandler
