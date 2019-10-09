@@ -7,9 +7,9 @@
           "examplePhrases": [
             "Alexa open linux academy lab",
             "linux academy",
-            "la lab"
+            "linux academy lab"
           ],
-          "name": "linuxAcadamyAlexaLab",
+          "name": "linuxAcadamyLab",
           "description": "A set of branches for the Alexa Skills Cert Exam Course."
         }
       },
@@ -22,7 +22,7 @@
       "custom": {
         "endpoint": {
           "sourceDir": "lambda/custom",
-          "uri": "linuxAcademyAlexaLab"
+          "uri": "linuxAcademyLab"
         }
       }
     },
