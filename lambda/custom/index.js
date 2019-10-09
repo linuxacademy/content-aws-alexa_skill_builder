@@ -25,7 +25,6 @@ const LaunchRequestHandler = {
 
 // WelcomeIntent 
 // Welcomes user to the linux academy lab
-
 const WelcomeIntentHandler = {
   canHandle(handlerInput) {
     return handlerInput.requestEnvelope.request.type === 'IntentRequest'
@@ -40,6 +39,25 @@ const WelcomeIntentHandler = {
       .getResponse();
   },
 };
+
+// Fairy Godmother
+// Triggers the fairy godmother to grant a wish
+const FairyGodmotherIntentHandler = {
+  canHandle(handlerInput) {
+    return handlerInput.requestEnvelope.request.type === 'IntentRequest'
+      && handlerInput.requestEnvelope.request.intent.name === 'FairyGodmotherIntent';
+  },
+  handle(handlerInput) {
+    const speechText = "What do you wish?";
+
+    return handlerInput.responseBuilder
+      .speak(speechText)
+      .reprompt(speechText)
+      .getResponse();
+  },
+};
+
+
 // # `HelpIntentHandler`
 // The help intent handler will helpe the user when they ask for help
 const HelpIntentHandler = {
@@ -110,7 +128,8 @@ exports.handler = skillBuilder
     HelpIntentHandler,
     SessionEndedRequestHandler,
     // IntentReflectorHandler,
-    WelcomeIntentHandler
+    WelcomeIntentHandler,
+    FairyGodmotherIntentHandler
   )
   .addErrorHandlers(ErrorHandler)
   .lambda();

@@ -25,6 +25,16 @@
             "i'm glad to be here",
             "i am glad to be here"
           ]
+        },
+        {
+          "name": "FairyGodmotherIntent",
+          "samples": [
+            "fairy godmother",
+            "grant my wish",
+            "i have a wish",
+            "fairy godmother grant my wish",
+            "fairy godmother i have a wish"
+          ]
         }
       ]
     }
