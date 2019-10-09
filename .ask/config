@@ -1,33 +1,9 @@
 {
   "deploy_settings": {
     "default": {
-      "skill_id": "amzn1.ask.skill.bbcc2482-76b1-4cb0-a6e1-7169e33cd243",
+      "skill_id": "",
       "was_cloned": false,
-      "merge": {},
-      "resources": {
-        "manifest": {
-          "eTag": "c47e094d47599fbd79e2f8809feefefa"
-        },
-        "interactionModel": {
-          "en-US": {
-            "eTag": "82150ee6c2e3a8ac4141e85718507c78"
-          }
-        },
-        "lambda": [
-          {
-            "alexaUsage": [
-              "custom/default"
-            ],
-            "arn": "arn:aws:lambda:us-east-1:585804262281:function:linuxAcademyAlexaLab",
-            "awsRegion": "us-east-1",
-            "codeUri": "lambda/custom",
-            "functionName": "linuxAcademyAlexaLab",
-            "handler": "index.handler",
-            "revisionId": "9057e1b2-dbd5-469d-b3ed-0c0622aa8dc0",
-            "runtime": "nodejs8.10"
-          }
-        ]
-      }
+      "merge": {}
     }
   }
 }
