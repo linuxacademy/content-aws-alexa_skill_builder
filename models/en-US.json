@@ -20,11 +20,9 @@
           "samples": []
         },
         {
-          "name": "GoodbyeIntent",
+          "name": "WelcomeIntent",
           "samples": [
-            "thank you",
-            "back later",
-            "i'll be back"
+            "i'm glad to be here"
           ]
         }
       ]

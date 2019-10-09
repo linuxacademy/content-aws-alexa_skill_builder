@@ -13,7 +13,7 @@ const LaunchRequestHandler = {
     return handlerInput.requestEnvelope.request.type === 'LaunchRequest';
   },
   handle(handlerInput) {
-    const speechText = 'Welcome to the Linux Academy Lab! This is a simple demonstration. You can say Ill be back.';
+    const speechText = "Welcome to the Linux Academy Alexa Lab, you can say 'I\'m glad to here.'";
 
     return handlerInput.responseBuilder
       .speak(speechText)
@@ -23,16 +23,16 @@ const LaunchRequestHandler = {
   },
 };
 
-// # `HelloWorldIntent` 
-// Hello World Intent Handler Handles all IntentRequest and says Hello world when invoked 
+// WelcomeIntent 
+// Welcomes user to the linux academy lab
 
-const GoodbyeIntentHandler = {
+const WelcomeIntentHandler = {
   canHandle(handlerInput) {
     return handlerInput.requestEnvelope.request.type === 'IntentRequest'
-      && handlerInput.requestEnvelope.request.intent.name === 'GoodbyeIntent';
+      && handlerInput.requestEnvelope.request.intent.name === 'WelcomeIntent';
   },
   handle(handlerInput) {
-    const speechText = 'I look forward to seeing you later!';
+    const speechText = "Let's get learning!";
 
     return handlerInput.responseBuilder
       .speak(speechText)
@@ -54,22 +54,6 @@ const HelpIntentHandler = {
       .speak(speechText)
       .reprompt(speechText)
       .withSimpleCard('Hurry Back!', 'I look forward to seeing you later!')
-      .getResponse();
-  },
-};
-
-const CancelAndStopIntentHandler = {
-  canHandle(handlerInput) {
-    return handlerInput.requestEnvelope.request.type === 'IntentRequest'
-      && (handlerInput.requestEnvelope.request.intent.name === 'AMAZON.CancelIntent'
-        || handlerInput.requestEnvelope.request.intent.name === 'AMAZON.StopIntent');
-  },
-  handle(handlerInput) {
-    const speechText = 'Comeback soon!';
-
-    return handlerInput.responseBuilder
-      .speak(speechText)
-      .withSimpleCard('Goodbye!', speechText)
       .getResponse();
   },
 };
@@ -124,10 +108,10 @@ exports.handler = skillBuilder
   .addRequestHandlers(
     LaunchRequestHandler,
     HelpIntentHandler,
-    CancelAndStopIntentHandler,
+    // CancelAndStopIntentHandler,
     SessionEndedRequestHandler,
-    IntentReflectorHandler,
-    GoodbyeIntentHandler
+    // IntentReflectorHandler,
+    WelcomeIntentHandler
   )
   .addErrorHandlers(ErrorHandler)
   .lambda();
