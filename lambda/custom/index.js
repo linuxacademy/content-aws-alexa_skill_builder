@@ -69,7 +69,6 @@ const MakeAnimalIntentHandler = {
 
     return handlerInput.responseBuilder
       .speak(speechText)
-      .shouldEndSession(true)
       .getResponse();
   },
 };
@@ -146,7 +145,8 @@ exports.handler = skillBuilder
     SessionEndedRequestHandler,
     // IntentReflectorHandler,
     WelcomeIntentHandler,
-    FairyGodmotherIntentHandler
+    FairyGodmotherIntentHandler,
+    MakeAnimalIntentHandler
   )
   .addErrorHandlers(ErrorHandler)
   .lambda();
