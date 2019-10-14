@@ -48,7 +48,7 @@ const FairyGodmotherIntentHandler = {
       && handlerInput.requestEnvelope.request.intent.name === 'FairyGodmotherIntent';
   },
   handle(handlerInput) {
-    const speechText = "I am your fairy godmother and I can turn you into an animal. You can say 'I wish to be an animal.'";
+    const speechText = "I am your fairy godmother & I can turn you into an animal. You can say 'I wish to be an animal.'";
 
     return handlerInput.responseBuilder
       .speak(speechText)
