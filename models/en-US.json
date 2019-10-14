@@ -35,6 +35,14 @@
             "fairy godmother grant my wish",
             "fairy godmother i have a wish"
           ]
+        },
+        {
+          "name": "MakeAnimalIntent",
+          "samples": [
+            "i wish to be an animal",
+            "make me an animal",
+            "turn me into an animal"
+          ]
         }
       ]
     }
