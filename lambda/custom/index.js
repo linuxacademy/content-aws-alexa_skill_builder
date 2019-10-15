@@ -58,14 +58,16 @@ const FairyGodmotherIntentHandler = {
 };
 
 // Make Animal
-// Turns the user into a lion
+// Turns the user into animal
 const MakeAnimalIntentHandler = {
   canHandle(handlerInput) {
     return handlerInput.requestEnvelope.request.type === 'IntentRequest'
       && handlerInput.requestEnvelope.request.intent.name === 'MakeAnimalIntent';
   },
   handle(handlerInput) {
-    const speechText = "Poof! You are a lion! Roar!";
+    const speechStartText = "Poof! You are a super-duper ";
+    const animal = handlerInput.requestEnvelope.request.intent.slots.animal.value + '!'
+    const speechText = speechStartText + animal
 
     return handlerInput.responseBuilder
       .speak(speechText)
