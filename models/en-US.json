@@ -12,6 +12,16 @@
               }
             }
           ]
+        },
+        {
+          "name": "animalColor",
+          "values": [
+            {
+              "name": {
+                "value": "color"
+              }
+            }
+          ]
         }
       ],
       "intents": [
@@ -54,15 +64,19 @@
             {
               "name": "animal",
               "type": "animalType"
+            },
+            {
+              "name": "color",
+              "type": "animalColor"
             }
           ],
           "samples": [
-            "i wish to be an {animal}",
-            "make me an {animal}",
-            "turn me into an {animal}",
-            "i wish to be a {animal}",
-            "make me a {animal}",
-            "turn me into a {animal}"
+            "i wish to be an {color} {animal}",
+            "make me an {color} {animal}",
+            "turn me into an {color} {animal}",
+            "i wish to be a {color} {animal}",
+            "make me a {color} {animal}",
+            "turn me into a {color} {animal}"
           ]
         }
       ]

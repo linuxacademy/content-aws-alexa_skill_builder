@@ -66,8 +66,9 @@ const MakeAnimalIntentHandler = {
   },
   handle(handlerInput) {
     const speechStartText = "Poof! You are a super-duper ";
+    const color = handlerInput.requestEnvelope.request.intent.slots.color.value
     const animal = handlerInput.requestEnvelope.request.intent.slots.animal.value + '!'
-    const speechText = speechStartText + animal
+    const speechText = speechStartText + color + animal
 
     return handlerInput.responseBuilder
       .speak(speechText)
