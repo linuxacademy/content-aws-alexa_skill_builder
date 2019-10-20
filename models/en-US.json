@@ -1,7 +1,7 @@
 {
   "interactionModel": {
     "languageModel": {
-      "invocationName": "linux academy alexa lab",
+      "invocationName": "linux academy lab",
       "intents": [
         {
           "name": "AMAZON.CancelIntent",
