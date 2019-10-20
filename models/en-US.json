@@ -71,12 +71,12 @@
             }
           ],
           "samples": [
-            "i wish to be an {color} {animal}",
-            "make me an {color} {animal}",
-            "turn me into an {color} {animal}",
-            "i wish to be a {color} {animal}",
-            "make me a {color} {animal}",
-            "turn me into a {color} {animal}"
+            "i wish to be an {animal} colored {color}",
+            "make me an {animal} colored {color}",
+            "turn me into an {animal} colored {color}",
+            "i wish to be a {animal} colored {color}",
+            "make me a {animal} colored {color}",
+            "turn me into a {animal} colored {color}"
           ]
         }
       ]
