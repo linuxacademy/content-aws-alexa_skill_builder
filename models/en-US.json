@@ -2,18 +2,6 @@
   "interactionModel": {
     "languageModel": {
       "invocationName": "linux academy lab",
-      "types": [
-        {
-          "name": "animalType",
-          "values": [
-            {
-              "name": {
-                "value": "animal"
-              }
-            }
-          ]
-        }
-      ],
       "intents": [
         {
           "name": "AMAZON.CancelIntent",
@@ -53,7 +41,7 @@
           "slots": [
             {
               "name": "animal",
-              "type": "animalType"
+              "type": "ANIMAL_TYPE"
             }
           ],
           "samples": [
@@ -63,6 +51,18 @@
             "i wish to be a {animal}",
             "make me a {animal}",
             "turn me into a {animal}"
+          ]
+        }
+      ],
+      "types": [
+        {
+          "name": "ANIMAL_TYPE",
+          "values": [
+            {
+              "name": {
+                "value": "animal"
+              }
+            }
           ]
         }
       ]
