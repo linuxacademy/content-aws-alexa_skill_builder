@@ -52,6 +52,7 @@ const FairyGodmotherIntentHandler = {
 
     return handlerInput.responseBuilder
       .speak(speechText)
+      .withSimpleCard('Fairy Godmother says:\n', speechText)
       .reprompt(speechText)
       .getResponse();
   },
@@ -72,6 +73,7 @@ const MakeAnimalIntentHandler = {
 
     return handlerInput.responseBuilder
       .speak(speechText)
+      .withSimpleCard('Fairy Godmother waves her magic wand and says:\n', speechText)
       .getResponse();
   },
 };
