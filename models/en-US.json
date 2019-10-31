@@ -2,28 +2,6 @@
   "interactionModel": {
     "languageModel": {
       "invocationName": "linux academy lab",
-      "types": [
-        {
-          "name": "animalType",
-          "values": [
-            {
-              "name": {
-                "value": "animal"
-              }
-            }
-          ]
-        },
-        {
-          "name": "animalColor",
-          "values": [
-            {
-              "name": {
-                "value": "color"
-              }
-            }
-          ]
-        }
-      ],
       "intents": [
         {
           "name": "AMAZON.CancelIntent",
@@ -71,8 +49,30 @@
             }
           ],
           "samples": [
-            "i wish to be a {color} {animal}",
-            "I wish to be an {color} {animal}"
+            "i wish to be a {animal} colored {color}",
+            "I wish to be an {animal} colored {color}"
+          ]
+        }
+      ],
+      "types": [
+        {
+          "name": "animalType",
+          "values": [
+            {
+              "name": {
+                "value": "animal"
+              }
+            }
+          ]
+        },
+        {
+          "name": "animalColor",
+          "values": [
+            {
+              "name": {
+                "value": "color"
+              }
+            }
           ]
         }
       ]
