@@ -3,7 +3,7 @@
 
 // # Require the Ask SDK
 
-const Alexa = require('ask-sdk-core');
+const Alexa = require('ask-sdk');
 
 // # `launch request handler`
 // The launch request handler is used to start the skill
@@ -47,8 +47,24 @@ const FairyGodmotherIntentHandler = {
     return handlerInput.requestEnvelope.request.type === 'IntentRequest'
       && handlerInput.requestEnvelope.request.intent.name === 'FairyGodmotherIntent';
   },
-  handle(handlerInput) {
-    const speechText = "I am your fairy godmother and I can turn you into an animal. You can say 'I wish to be an animal.'";
+  async handle(handlerInput) {
+
+    // get persisten attributes
+    const attributesManager = handlerInput.attributesManager;
+    const attributes = await attributesManager.getPersistentAttributes() || {};
+
+    // check to see if user info exists
+    if ((Object.keys(attributes).length === 0))
+    {
+      const speechText = "I am your fairy godmother and I can turn you into an animal. You can say 'Make me an animal.'";
+    }
+    // else
+    // {
+    //   let color = attributes.color.toString();
+    //   let animal = attributes.animal.toString();
+
+    //   const speechText = "Welcome back my " + color + " " + animal + ". if you would like to be a different animal today you may say 'Make me a different animal.'";
+    // }
 
     return handlerInput.responseBuilder
       .speak(speechText)
@@ -120,10 +136,10 @@ const CompletedMakeAnimalIntent = {
       && request.intent.name === 'MakeAnimalIntent'
       && request.dialogState === 'COMPLETED';
   },
-  handle(handlerInput) {
+  async handle(handlerInput) {
 
-    const filledSlots = handlerInput.requestEnvelope.request.intent.slots.color.resolutions.resolutionsPerAuthority[0].values[0].value.name;
-    console.log(`The filled slots: ${JSON.stringify(filledSlots)}`);
+    // const filledSlots = handlerInput.requestEnvelope.request.intent.slots.color.resolutions.resolutionsPerAuthority[0].values[0].value.name;
+    // console.log(`The filled slots: ${JSON.stringify(filledSlots)}`);
 
     // ER slot values
     const erSpeechStartText = "Poof! You are a super-duper ";
@@ -138,6 +154,14 @@ const CompletedMakeAnimalIntent = {
     const speechText = speechStartText + color + animal
 
     const speechOutput = "Entity Resolution: " + erSpeechText + " Spoken values: " + speechText
+
+    // save the color and animal to persistent attributes
+    const attributesManager = handlerInput.attributesManager;
+    const attributes = await attributesManager.getPersistentAttributes() || {};
+    attributes.color = color
+    atrirbutes.animal = animal
+    attributesManager.setPersistentAttributes(attributes)
+    await attributesManager.savePersistentAttributes()
 
     return handlerInput.responseBuilder
       .speak(speechOutput)
@@ -240,7 +264,9 @@ exports.handler = skillBuilder
     // MakeAnimalIntentHandler,
     InProgressMakeAnimalIntent,
     CompletedMakeAnimalIntent
-
   )
   .addErrorHandlers(ErrorHandler)
+  .withTableName('fairy-godmother')
+  .withAutoCreateTable(true)
+  .withDynamoDbClient()
   .lambda();
