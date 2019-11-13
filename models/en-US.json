@@ -60,8 +60,13 @@
             }
           ],
           "samples": [
-            "i wish to be a {animal} colored {color}",
-            "I wish to be an {animal} colored {color}"
+            "make me an animal",
+            "i wish to be an {animal}",
+            "I want to be a {animal}",
+            "I want to be an {animal}",
+            "I wish to be a {animal}",
+            "I wish to be an {animal}",
+            "I want to be {color}"
           ]
         }
       ],
@@ -71,7 +76,11 @@
           "values": [
             {
               "name": {
-                "value": "animal"
+                "value": "animal",
+                "synonyms": [
+                  "tiger",
+                  "animal"
+                ]
               }
             }
           ]
@@ -81,7 +90,11 @@
           "values": [
             {
               "name": {
-                "value": "color"
+                "value": "color",
+                "synonyms": [
+                  "purple",
+                  "green"
+                ]
               }
             }
           ]
@@ -123,16 +136,7 @@
         "variations": [
           {
             "type": "PlainText",
-            "value": "Oh!  I love being an animal!  What animal do you want to be?"
-          }
-        ]
-      },
-      {
-        "id": "Elicit.Intent-MakeAnimalIntent.IntentSlot-animal",
-        "variations": [
-          {
-            "type": "PlainText",
-            "value": "Oh!  I love being an animal!  What animal do you want to be?"
+            "value": "Cooool! I love being an animal!  What animal do you want to be?"
           }
         ]
       },
