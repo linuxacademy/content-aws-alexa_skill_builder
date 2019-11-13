@@ -41,16 +41,17 @@
           "slots": [
             {
               "name": "animal",
-              "type": "animalType"
+              "type": "animalType",
+              "samples": []
             },
             {
               "name": "color",
-              "type": "animalColor"
+              "type": "animalColor",
+              "samples": []
             }
           ],
           "samples": [
-            "i wish to be a {animal} colored {color}",
-            "I wish to be an {animal} colored {color}"
+            "i wish to be an animal"
           ]
         }
       ],

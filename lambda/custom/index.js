@@ -3,7 +3,7 @@
 
 // # Require the Ask SDK
 
-const Alexa = require('ask-sdk-core');
+const Alexa = require('ask-sdk');
 
 // # `launch request handler`
 // The launch request handler is used to start the skill
@@ -49,6 +49,9 @@ const FairyGodmotherIntentHandler = {
   },
   handle(handlerInput) {
     const speechText = "I am your fairy godmother and I can turn you into an animal. You can say 'I wish to be an animal.'";
+    if(handlerInput.requestEnvelope.request.type === 'SessionEndedRequest') {
+      console.log(JSON.stringify(handlerInput.requestEnvelope.request.error));
+    }
 
     return handlerInput.responseBuilder
       .speak(speechText)
@@ -56,6 +59,61 @@ const FairyGodmotherIntentHandler = {
       .getResponse();
   },
 };
+
+// const InProgressMakeAnimalIntent = {
+//   canHandle(handlerInput) {
+//     const request = handlerInput.requestEnvelope.request;
+
+//     return request.type === 'IntentRequest'
+//       && request.intent.name === 'MakeAnimalIntent'
+//       && request.dialogState !== 'COMPLETED';
+//   },
+//   handle(handlerInput) {
+//     const currentIntent = handlerInput.requestEnvelope.request.intent;
+//     let prompt = '';
+
+//     for (const slotName of Object.keys(handlerInput.requestEnvelope.request.intent.slots)) {
+//       const currentSlot = currentIntent.slots[slotName];
+//       if (currentSlot.confirmationStatus !== 'CONFIRMED'
+//                 && currentSlot.resolutions
+//                 && currentSlot.resolutions.resolutionsPerAuthority[0]) {
+//         if (currentSlot.resolutions.resolutionsPerAuthority[0].status.code === 'ER_SUCCESS_MATCH') {
+//           if (currentSlot.resolutions.resolutionsPerAuthority[0].values.length > 1) {
+//             prompt = 'Which would you like';
+//             const size = currentSlot.resolutions.resolutionsPerAuthority[0].values.length;
+
+//             currentSlot.resolutions.resolutionsPerAuthority[0].values
+//               .forEach((element, index) => {
+//                 prompt += ` ${(index === size - 1) ? ' or' : ' '} ${element.value.name}`;
+//               });
+
+//             prompt += '?';
+
+//             return handlerInput.responseBuilder
+//               .speak(prompt)
+//               .reprompt(prompt)
+//               .addElicitSlotDirective(currentSlot.name)
+//               .getResponse();
+//           }
+//         } else if (currentSlot.resolutions.resolutionsPerAuthority[0].status.code === 'ER_SUCCESS_NO_MATCH') {
+//           if (requiredSlots.indexOf(currentSlot.name) > -1) {
+//             prompt = `What ${currentSlot.name} are you looking for`;
+
+//             return handlerInput.responseBuilder
+//               .speak(prompt)
+//               .reprompt(prompt)
+//               .addElicitSlotDirective(currentSlot.name)
+//               .getResponse();
+//           }
+//         }
+//       }
+//     }
+
+//     return handlerInput.responseBuilder
+//       .addDelegateDirective(currentIntent)
+//       .getResponse();
+//   },
+// };
 
 // Make Animal
 // Turns the user into animal
@@ -100,7 +158,7 @@ const SessionEndedRequestHandler = {
     return handlerInput.requestEnvelope.request.type === 'SessionEndedRequest';
   },
   handle(handlerInput) {
-    console.log(`Session ended with reason: ${handlerInput.requestEnvelope.request.reason}`);
+    console.log(`Session ended with reason: ${handlerInput.requestEnvelope.request.error.message}`);
 
     return handlerInput.responseBuilder.getResponse();
   },
@@ -146,9 +204,10 @@ exports.handler = skillBuilder
     LaunchRequestHandler,
     HelpIntentHandler,
     SessionEndedRequestHandler,
-    // IntentReflectorHandler,
+    IntentReflectorHandler,
     WelcomeIntentHandler,
     FairyGodmotherIntentHandler,
+    // InProgressMakeAnimalIntent,
     MakeAnimalIntentHandler
   )
   .addErrorHandlers(ErrorHandler)
