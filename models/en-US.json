@@ -41,11 +41,22 @@
           "slots": [
             {
               "name": "animal",
-              "type": "animalType"
+              "type": "animalType",
+              "samples": [
+                "I want to be a {animal}",
+                "I want to be an {animal}",
+                "I wish to be a {animal}",
+                "I wish to be an {animal}",
+                "{animal}"
+              ]
             },
             {
               "name": "color",
-              "type": "animalColor"
+              "type": "animalColor",
+              "samples": [
+                "I want to be {color}",
+                "{color}"
+              ]
             }
           ],
           "samples": [
@@ -76,6 +87,64 @@
           ]
         }
       ]
-    }
+    },
+    "dialog": {
+      "intents": [
+        {
+          "name": "MakeAnimalIntent",
+          "confirmationRequired": false,
+          "prompts": {},
+          "slots": [
+            {
+              "name": "animal",
+              "type": "animalType",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Intent-MakeAnimalIntent.IntentSlot-animal"
+              }
+            },
+            {
+              "name": "color",
+              "type": "animalColor",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Intent-MakeAnimalIntent.IntentSlot-color"
+              }
+            }
+          ]
+        }
+      ]
+    },
+    "prompts": [
+      {
+        "id": "Elicit.Intent-MakeAnimalIntent.IntentSlot-animal",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Oh!  I love being an animal!  What animal do you want to be?"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Intent-MakeAnimalIntent.IntentSlot-animal",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Oh!  I love being an animal!  What animal do you want to be?"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Intent-MakeAnimalIntent.IntentSlot-color",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "Awesome! What color do you want to be?"
+          }
+        ]
+      }
+    ]
   }
 }
