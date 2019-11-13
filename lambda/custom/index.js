@@ -112,6 +112,36 @@ const InProgressMakeAnimalIntent = {
   },
 };
 
+const CompletedMakeAnimalIntent = {
+  canHandle(handlerInput) {
+    const request = handlerInput.requestEnvelope.request;
+
+    return request.type === 'IntentRequest'
+      && request.intent.name === 'MakeAnimalIntent'
+      && request.dialogState === 'COMPLETED';
+  },
+  handle(handlerInput) {
+
+    // ER slot values
+    const erSpeechStartText = "Poof! You are a super-duper ";
+    const erColor = handlerInput.requestEnvelope.request.intent.slots.color.resolutions.resolutionsPerAuthority[0].values[0].value.name + ' '
+    const erAnimal = handlerInput.requestEnvelope.request.intent.slots.animal.resolutions.resolutionsPerAuthority[0].values[0].value.name + '!'
+    const erSpeechText = erSpeechStartText + erColor + erAnimal
+    
+    // Spoken slot values
+    const speechStartText = "Poof! You are a super-duper ";
+    const color = handlerInput.requestEnvelope.request.intent.slots.color.value + ' '
+    const animal = handlerInput.requestEnvelope.request.intent.slots.animal.value + '!'
+    const speechText = speechStartText + color + animal
+
+    const speechOutput = "Entity Resolution: " + erSpeechStartText + ". Spoken values: " + speechText + "." 
+
+    return handlerInput.responseBuilder
+      .speak(speechOutput)
+      .getResponse();
+  },
+};
+
 // Make Animal
 // Turns the user into animal
 const MakeAnimalIntentHandler = {
@@ -205,7 +235,8 @@ exports.handler = skillBuilder
     WelcomeIntentHandler,
     FairyGodmotherIntentHandler,
     // MakeAnimalIntentHandler,
-    InProgressMakeAnimalIntent
+    InProgressMakeAnimalIntent,
+    CompletedMakeAnimalIntent
 
   )
   .addErrorHandlers(ErrorHandler)
