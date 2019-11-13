@@ -122,6 +122,9 @@ const CompletedMakeAnimalIntent = {
   },
   handle(handlerInput) {
 
+    const filledSlots = handlerInput.requestEnvelope.request.intent.slots.color.resolutions.resolutionsPerAuthority[0].values[0].value.name;
+    console.log(`The filled slots: ${JSON.stringify(filledSlots)}`);
+
     // ER slot values
     const erSpeechStartText = "Poof! You are a super-duper ";
     const erColor = handlerInput.requestEnvelope.request.intent.slots.color.resolutions.resolutionsPerAuthority[0].values[0].value.name + ' '
@@ -134,7 +137,7 @@ const CompletedMakeAnimalIntent = {
     const animal = handlerInput.requestEnvelope.request.intent.slots.animal.value + '!'
     const speechText = speechStartText + color + animal
 
-    const speechOutput = "Entity Resolution: " + erSpeechStartText + ". Spoken values: " + speechText + "." 
+    const speechOutput = "Entity Resolution: " + erSpeechText + " Spoken values: " + speechText
 
     return handlerInput.responseBuilder
       .speak(speechOutput)
