@@ -3,14 +3,12 @@
     "publishingInformation": {
       "locales": {
         "en-US": {
-          "summary": "A set of branches to demonstrate Alexa skills for the Alexa SKills Cert Exam Course",
+          "summary": "A repo for Linux Academy's AWS Alexa Skill Builders Essentials course",
           "examplePhrases": [
-            "Alexa open linux academy lab",
-            "linux academy",
-            "linux academy lab"
+            "linux academy essentials lab"
           ],
-          "name": "linuxAcadamyLab",
-          "description": "A set of branches for the Alexa Skills Cert Exam Course."
+          "name": "linuxAcademyAlexaLab",
+          "description": "A repo to help learn Alexa Skill Builders Essentials."
         }
       },
       "isAvailableWorldwide": true,
@@ -22,7 +20,7 @@
       "custom": {
         "endpoint": {
           "sourceDir": "lambda/custom",
-          "uri": "linuxAcademyLab"
+          "uri": "linuxAcademyAlexaLab"
         }
       }
     },

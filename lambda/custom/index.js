@@ -3,7 +3,7 @@
 
 // # Require the Ask SDK
 
-const Alexa = require('ask-sdk-core');
+const Alexa = require('ask-sdk-core');  // Only need the minimum package for this skill
 
 // # `launch request handler`
 // The launch request handler is used to start the skill
@@ -40,6 +40,7 @@ const WelcomeIntentHandler = {
       .getResponse();
   },
 };
+
 // # `HelpIntentHandler`
 // The help intent handler will helpe the user when they ask for help
 const HelpIntentHandler = {
@@ -48,12 +49,12 @@ const HelpIntentHandler = {
       && handlerInput.requestEnvelope.request.intent.name === 'AMAZON.HelpIntent';
   },
   handle(handlerInput) {
-    const speechText = 'You can say thank you to me!';
+    const speechText = "You can say 'I\'m glad to be here.'";
 
     return handlerInput.responseBuilder
       .speak(speechText)
       .reprompt(speechText)
-      .withSimpleCard('Hurry Back!', 'I look forward to seeing you later!')
+      .withSimpleCard('Help Intent', "You can say 'I\'m glad to be here.'")
       .getResponse();
   },
 };
@@ -109,7 +110,7 @@ exports.handler = skillBuilder
     LaunchRequestHandler,
     HelpIntentHandler,
     SessionEndedRequestHandler,
-    // IntentReflectorHandler,
+    IntentReflectorHandler,
     WelcomeIntentHandler
   )
   .addErrorHandlers(ErrorHandler)
