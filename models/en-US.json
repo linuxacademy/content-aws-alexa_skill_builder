@@ -1,7 +1,7 @@
 {
   "interactionModel": {
     "languageModel": {
-      "invocationName": "linux academy lab",
+      "invocationName": "fairy godmother",
       "intents": [
         {
           "name": "AMAZON.CancelIntent",
@@ -18,13 +18,6 @@
         {
           "name": "AMAZON.FallbackIntent",
           "samples": []
-        },
-        {
-          "name": "WelcomeIntent",
-          "samples": [
-            "i'm glad to be here",
-            "i am glad to be here"
-          ]
         },
         {
           "name": "FairyGodmotherIntent",

@@ -13,29 +13,11 @@ const LaunchRequestHandler = {
     return handlerInput.requestEnvelope.request.type === 'LaunchRequest';
   },
   handle(handlerInput) {
-    const speechText = "Welcome to the Linux Academy Alexa Lab, you can say 'I\'m glad to be here.'";
+    const speechText = "I am your fairy godmother, you can say 'I wish to be turned into an animal'";
 
     return handlerInput.responseBuilder
       .speak(speechText)
       .reprompt(speechText)
-      .withSimpleCard('Linux Academy Alexa Lab', speechText)
-      .getResponse();
-  },
-};
-
-// WelcomeIntent 
-// Welcomes user to the linux academy lab
-const WelcomeIntentHandler = {
-  canHandle(handlerInput) {
-    return handlerInput.requestEnvelope.request.type === 'IntentRequest'
-      && handlerInput.requestEnvelope.request.intent.name === 'WelcomeIntent';
-  },
-  handle(handlerInput) {
-    const speechText = "Let's get learning!";
-
-    return handlerInput.responseBuilder
-      .speak(speechText)
-      .withSimpleCard('Hurry Back!', speechText)
       .getResponse();
   },
 };
@@ -48,7 +30,7 @@ const FairyGodmotherIntentHandler = {
       && handlerInput.requestEnvelope.request.intent.name === 'FairyGodmotherIntent';
   },
   handle(handlerInput) {
-    const speechText = "I am your fairy godmother and I can turn you into an animal. You can say 'I wish to be an animal.'";
+    const speechText = "Poooof! You are an animal.";
 
     return handlerInput.responseBuilder
       .speak(speechText)
@@ -128,7 +110,6 @@ exports.handler = skillBuilder
     HelpIntentHandler,
     SessionEndedRequestHandler,
     // IntentReflectorHandler,
-    WelcomeIntentHandler,
     FairyGodmotherIntentHandler
   )
   .addErrorHandlers(ErrorHandler)
