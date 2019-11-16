@@ -1,7 +1,7 @@
 {
   "interactionModel": {
     "languageModel": {
-      "invocationName": "linux academy essentials lab",
+      "invocationName": "platinum veterinary hospital",
       "intents": [
         {
           "name": "AMAZON.CancelIntent",
@@ -22,8 +22,7 @@
         {
           "name": "WelcomeIntent",
           "samples": [
-            "i'm glad to be here",
-            "i am glad to be here"
+            "I want to setup service for my pet"
           ]
         }
       ]

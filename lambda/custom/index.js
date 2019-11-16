@@ -13,12 +13,11 @@ const LaunchRequestHandler = {
     return handlerInput.requestEnvelope.request.type === 'LaunchRequest';
   },
   handle(handlerInput) {
-    const speechText = "Welcome to the Linux Academy Alexa Lab, you can say 'I\'m glad to be here.'";
+    const speechText = "Welcome to the Platinum Veterinary Hospital, you can say 'I want to setup service for my pet'";
 
     return handlerInput.responseBuilder
       .speak(speechText)
       .reprompt(speechText)
-      .withSimpleCard('Linux Academy Alexa Lab', speechText)
       .getResponse();
   },
 };
@@ -32,11 +31,10 @@ const WelcomeIntentHandler = {
       && handlerInput.requestEnvelope.request.intent.name === 'WelcomeIntent';
   },
   handle(handlerInput) {
-    const speechText = "Let's get learning!";
+    const speechText = "I can help you setup service for your pet.  Is this a dog, a cat, or a reptile?";
 
     return handlerInput.responseBuilder
       .speak(speechText)
-      .withSimpleCard('Hurry Back!', speechText)
       .getResponse();
   },
 };
